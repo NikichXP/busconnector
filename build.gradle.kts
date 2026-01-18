@@ -6,7 +6,7 @@ plugins {
 }
 
 group = "com.nikichxp"
-version = "0.0.1-SNAPSHOT"
+version = "0.0.1"
 description = "Bus connector API"
 
 java {
@@ -41,4 +41,8 @@ kotlin {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.bootJar {
+	archiveFileName.set("app.jar")
 }
