@@ -3,7 +3,7 @@ name: CI/CD Build and Push
 on:
   push:
     branches:
-      - master
+      - main
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
