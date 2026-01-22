@@ -50,18 +50,3 @@ jobs:
           tags: ${{ secrets.REGISTRY_URL }}/tgbot:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
-
-      - name: Install kubectl
-        uses: azure/setup-kubectl@v4
-        with:
-          version: "latest"
-
-      - name: Set Kubernetes Context
-        uses: azure/k8s-set-context@v3
-        with:
-          method: kubeconfig
-          kubeconfig: ${{ secrets.KUBECONFIG }}
-
-      - name: Update deployment
-        run: |
-          kubectl rollout restart deployment/tgbot -n tgbot
