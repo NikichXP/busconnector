@@ -47,6 +47,6 @@ jobs:
           file: Dockerfile_copy
           push: true
           platforms: linux/arm64
-          tags: ${{ secrets.REGISTRY_URL }}/tgbot:latest
+          tags: ${{ secrets.REGISTRY_URL }}/buscontroller:latest
           cache-from: type=gha
           cache-to: type=gha,mode=max
